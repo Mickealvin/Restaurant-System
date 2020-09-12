@@ -1,0 +1,51 @@
+<div class="wrapper fadeInDown">
+
+    <h1 class="text-center mt-5 display-4 font-weight-normal a">Enter your credentials</h1>
+  
+     <div class="row justify-content-center mt-4">
+     <div class="col-11 col-sm-9 col-md-6 col-lg-5 col-xl-4">
+        <div class="card-body" style="margin-top: -3%;">
+            <form [formGroup]="loginForm" (ngSubmit)="onLogin()" >
+              <fieldset>
+                <div class="form-group row"></div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email:</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    formControlName="email"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    placeholder="hola@example:"
+                  />
+                  <small id="emailHelp" class="form-text text-muted"
+                    >
+                    We will not share this info with anyone!</small
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password:</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    formControlName="password"
+                    id="exampleInputPassword1"
+                    placeholder="Password"
+                  />
+                </div>
+  
+                <button type="submit" class="btn btn-lg btn-block bg-dark text-center text-white mt-4">
+                  Submit
+                </button>
+                <div id="formFooter">
+                  <br />
+                  <a class="text-muted"id="underlineHover" routerLink='/reset'>¿Forgot password?</a>
+                  <br />
+                  <a class="text-muted"id="underlineHover" routerLink='/registro'>¿Do not you have an account yet?</a>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+     </div>
+     </div>
+</div>

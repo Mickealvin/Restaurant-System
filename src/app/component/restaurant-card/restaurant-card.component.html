@@ -1,0 +1,17 @@
+
+<div class="card card res-card shadow ml-4 mb-4 bg-white rounded" style="width: 13rem;">
+    <img class="card-img-top" src="../assets/image/restaurant-card.jpg" alt="...">
+    <div class="card-body">
+      <h5 class="card-title texto">{{ restaurant.name }}</h5>
+      <p class="card-text texto">{{ restaurant.address }}, {{ restaurant.city }}</p>
+      <p class="card-text"><b>Phone: </b> {{ restaurant.phone }}</p>
+
+      <star-rating value="{{restaurant.price}}" totalstars={{totalstar}} checkedcolor="GOLD" uncheckedcolor="black" size="24px" readonly="true" ></star-rating>
+   
+      <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+      <a class="btn btn-outline-dark font-weight-normal btn-block " [routerLink]="['/details', restaurant.id]">Details</a>
+    </div>
+  
+  </div>
+ 
+ 

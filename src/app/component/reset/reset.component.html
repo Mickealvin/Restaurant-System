@@ -1,0 +1,37 @@
+<div class="wrapper fadeInDown">
+
+    <h1 class="text-center mt-3 display-4 font-weight-normal a">Reset password
+    </h1>
+  
+     <div class="row justify-content-center mt-4">
+     <div class="col-11 col-sm-9 col-md-6 col-lg-5 col-xl-4">
+        <div class="card-body" style="margin-top: -1%;">
+            <form >
+                <fieldset>
+                  <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input
+                      type="email"
+                      id="email"
+                      class="form-control"
+                      [formControl]="userEmail"
+                      aria-describedby="emailHelp"
+                      placeholder="hola@example:"
+                    />
+                    <small id="emailHelp" class="form-text text-muted"
+                      > 
+                      The information will be sent to your email for the password change!</small
+                    >
+                    <span class="error-message"></span>
+                  </div>
+                 
+                    <button type="submit" class="btn btn-lg btn-block bg-dark text-center text-white mt-4 " (click)="OnReset()" >
+                      Submit
+                    </button>
+                  
+                </fieldset>
+              </form>
+          </div>
+     </div>
+     </div>
+</div>

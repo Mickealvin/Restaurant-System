@@ -1,0 +1,28 @@
+<div class="row">
+
+    <div class="card card res-card shadow ml-4 mb-4 bg-white rounded" style="width: 40rem;">
+        <img class="card-img-top" src="../assets/image/restaurant-card.jpg" alt="...">
+        <div class="card-body">
+            <!-- <a [routerLink]="['/details', restaurant.id]"></a> -->
+          <h5 class="card-title texto" >{{ restaurant.name }}</h5>
+          <p class="card-text texto">{{ restaurant.address }}, {{ restaurant.city }}</p>
+          <p class="card-text"><b>Phone: </b> {{ restaurant.phone }}</p>
+    
+          <star-rating value="{{restaurant.price}}" totalstars={{totalstar}} checkedcolor="GOLD" uncheckedcolor="black" size="24px" readonly="true" ></star-rating>
+         <button class="btn btn-primary float-md-right ">Reservat</button>
+
+        </div>
+      
+      </div>
+      <div class="col-md-6 ml-5 mb-5">
+        <agm-map [latitude]="restaurant.lat" [longitude]="restaurant.lng">
+            <agm-marker [latitude]="restaurant.lat" [longitude]="restaurant.lng"></agm-marker>
+          </agm-map>
+
+     </div>
+</div>
+
+ 
+   
+    
+ 
