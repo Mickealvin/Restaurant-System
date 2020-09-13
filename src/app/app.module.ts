@@ -20,6 +20,10 @@ import { RestaurantCardComponent } from './component/restaurant-card/restaurant-
 import { RestaurantDetailsComponent } from './component/restaurant-details/restaurant-details.component';
 import { AgmCoreModule } from '@agm/core';
 import{ NgxPaginationModule} from 'ngx-pagination';
+import { ReservationListComponent } from './component/reservation-list/reservation-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { Toast, ToastrModule } from 'ngx-toastr';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +33,8 @@ import{ NgxPaginationModule} from 'ngx-pagination';
     RegistroComponent,
     ResetComponent,
     RestaurantCardComponent,
-    RestaurantDetailsComponent
+    RestaurantDetailsComponent,
+    ReservationListComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +46,8 @@ import{ NgxPaginationModule} from 'ngx-pagination';
     AppRoutingModule,
     StarRatingModule,
     NgxPaginationModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
     RatingModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBQ-l6Y6ngFoh3IVWZ7cdxpMU7gKMUO514'

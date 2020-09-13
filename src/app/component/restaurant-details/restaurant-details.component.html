@@ -1,6 +1,6 @@
 <div class="row">
 
-    <div class="card card res-card shadow ml-4 mb-4 bg-white rounded" style="width: 40rem;">
+    <div class="card card res-card shadow ml-4 mb-4 bg-white rounded" style="width: 23rem;">
         <img class="card-img-top" src="../assets/image/restaurant-card.jpg" alt="...">
         <div class="card-body">
             <!-- <a [routerLink]="['/details', restaurant.id]"></a> -->
@@ -9,18 +9,72 @@
           <p class="card-text"><b>Phone: </b> {{ restaurant.phone }}</p>
     
           <star-rating value="{{restaurant.price}}" totalstars={{totalstar}} checkedcolor="GOLD" uncheckedcolor="black" size="24px" readonly="true" ></star-rating>
-         <button class="btn btn-primary float-md-right ">Reservat</button>
+         <button class="btn btn-lg btn-block bg-dark text-center text-white mt-4" (click)="showModal()">Reserve</button>
 
         </div>
       
       </div>
-      <div class="col-md-6 ml-5 mb-5">
+      <div class="col-md-7 ml-5 mb-5">
         <agm-map [latitude]="restaurant.lat" [longitude]="restaurant.lng">
             <agm-marker [latitude]="restaurant.lat" [longitude]="restaurant.lng"></agm-marker>
           </agm-map>
 
      </div>
 </div>
+
+<div
+      class="modal fade"
+      id="reservModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" style="max-width: 35rem;" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center" id="exampleModalLabel">
+              Reservation
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+           
+            
+              <form [formGroup]="reservaForm" (ngSubmit)="onReserve()">
+                <fieldset>
+                  <div class="form-group">
+                    <label for="email">Number of people:</label>
+                    <input id="peopleqty" type="number" min="1" class="form-control" formControlName="peopleqty"
+                    placeholder="Write the number of person" />
+
+                  </div>
+    
+                  <div class="form-group"> 
+                    <label for="password">Date:</label>
+                    <input id="date" type="date" class="form-control" formControlName="date" />
+                   </div>
+                  
+                   <div class="form-group">
+                     <label for="name">Hour:</label>
+                     <input id="time" type="time" class="form-control" formControlName="hour" />
+                   </div>
+                 
+                    <button type="submit" [disabled]="reservaForm.invalid" class="btn btn-lg btn-block bg-dark text-center text-white mt-4" >
+                      Submit
+                    </button>
+                </fieldset>
+              </form>
+            </div>
+        </div>
+ 
 
  
    
